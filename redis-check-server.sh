@@ -15,7 +15,7 @@ for A in $(ls | awk '{print $NF}'); do
     fi
 
     # Log the result to the API
-    curl -X POST -H "Content-Type: application/json" -d '{"ip"::"'"curl ifconfig.me"'",application":"'"$A"'","status":"'"$status"'"}' https://phpstack-1246017-4482242.cloudwaysapps.com/applications
+    curl -X POST -H "Content-Type: application/json" -d '{"ip":"'"curl ifconfig.me"'",application":"'"$A"'","status":"'"$status"'"}' https://phpstack-1246017-4482242.cloudwaysapps.com/applications
 
     cd /home/master/applications || { echo "Failed to change back to /home/master/applications"; exit 1; }
 done
